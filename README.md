@@ -1,2 +1,1 @@
-# DSA4262-ateam-
-m6A Site Prediction
+# DSA4262 Project 2: m6A Site Prediction
