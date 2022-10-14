@@ -128,7 +128,7 @@ def convert_prob_mat(df):
         i=i+4
     mat = pd.DataFrame(np.array(res).transpose(), columns=['1','2','3','4','5','6','7'])
     mat = mat.rename({0:"A",1:"C",2:"G",3:"T"}, axis="index")
-  return mat
+    return mat
   
 def log_odds(x):
     if x == 0:
@@ -136,7 +136,7 @@ def log_odds(x):
     else:
         return int(10*np.log10(x/0.25))
         
-def get_PWM(seq):
+def get_PWM(seq, log_odds_dict):
     res = 0
     for i in range(len(seq)):
         base = seq[i]
@@ -207,6 +207,7 @@ def prepare_data(json_input_path, info_input_path):
     print("Sorting by gene_id...")
     new_df = new_df.sort_values(by=['gene_id'], ascending=False).reset_index(drop=True)
     
+    labels = new_df.label
     
     # feature engineering
     print("Feature engineering steps:")
@@ -237,7 +238,7 @@ def prepare_data(json_input_path, info_input_path):
     
     log_odds_pos = base_prob_mat.applymap(log_odds)
     log_odds_dict = log_odds_pos.to_dict()
-    PWM_col = pd.DataFrame(new_df.apply(lambda x: get_PWM(x["nucleo_seq"]), axis=1), columns=["PWM"])
+    PWM_col = pd.DataFrame(new_df.apply(lambda x: get_PWM(x["nucleo_seq"], log_odds_dict), axis=1), columns=["PWM"])
     
     # add feature engineering columns to dataframe
     print("Done. Adding new columns to training and testing sets...")
@@ -265,16 +266,17 @@ def prepare_data(json_input_path, info_input_path):
     
     # saving to csv
     print("Saving csv files...")
-    directory = "processed_data"
-    X_train.to_csv(f"{directory}/trainset.csv")
-    X_test.to_csv(f"{directory}/testset.csv")
-    X_val.to_csv(f"{directory}/valset.csv")
+    outdir = './processed_data'
+    if not os.path.exists(outdir):
+        os.mkdir(outdir) 
+    
+    X_train.to_csv(os.path.join(outdir, "trainset.csv"))
+    X_test.to_csv(os.path.join(outdir, "testset.csv"))
+    X_val.to_csv(os.path.join(outdir, "valset.csv"))
     
     print("Files saved successfully.")
     
 if __name__ == "__main__":
-    
-    args = sys.argv[1:]
 
     prepare_data(json_input_path=sys.argv[1],
                 info_input_path=sys.argv[2])
