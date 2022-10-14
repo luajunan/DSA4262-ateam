@@ -270,9 +270,9 @@ def prepare_data(json_input_path, info_input_path):
     if not os.path.exists(outdir):
         os.mkdir(outdir) 
     
-    X_train.to_csv(os.path.join(outdir, "trainset.csv"))
-    X_test.to_csv(os.path.join(outdir, "testset.csv"))
-    X_val.to_csv(os.path.join(outdir, "valset.csv"))
+    X_train.to_csv(path_or_buf=os.path.join(outdir, "trainset.csv"), index=False)
+    X_test.to_csv(path_or_buf=os.path.join(outdir, "testset.csv"), index=False)
+    X_val.to_csv(path_or_buf=os.path.join(outdir, "valset.csv"), index=False)
     
     print("Files saved successfully.")
     
