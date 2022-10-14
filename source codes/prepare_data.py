@@ -266,7 +266,7 @@ def prepare_data(json_input_path, info_input_path):
     
     # saving to csv
     print("Saving csv files...")
-    outdir = './processed_data'
+    outdir = f'./processed_data`'
     if not os.path.exists(outdir):
         os.mkdir(outdir) 
     
@@ -277,7 +277,10 @@ def prepare_data(json_input_path, info_input_path):
     print("Files saved successfully.")
     
 if __name__ == "__main__":
-
+    
+    # usually will not run this, as it is not a requirement.
+    # required pipelines are `model_training.py` and `model_prediction.py`
+    
     prepare_data(json_input_path=sys.argv[1],
                 info_input_path=sys.argv[2])
                 
