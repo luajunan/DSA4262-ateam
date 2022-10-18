@@ -6,7 +6,7 @@ import json
 
 import mmh3
 import screed
-import pyhash
+# import pyhash
 
 def getKmers(sequence, size):
     return [sequence[x:x+size] for x in range(len(sequence) - size + 1)]
@@ -31,16 +31,16 @@ def murmur_hash(kmer):
 def average_hash(row, size, hashing=32, hash="fnv"):
   kmers = getKmers(row, size)
   #FNV Hash
-  if hash == "fnv":
-    if hashing == 32:
-      hasher = pyhash.fnv1_32()
-    if hashing == 64:
-      hasher = pyhash.fnv1_64()
+  # if hash == "fnv":
+    # if hashing == 32:
+      # hasher = pyhash.fnv1_32()
+    # if hashing == 64:
+      # hasher = pyhash.fnv1_64()
 
-    avg = 0
-    for kmer in kmers:
-      avg += hasher(kmer)
-    return avg/(len(row))
+    # avg = 0
+    # for kmer in kmers:
+      # avg += hasher(kmer)
+    # return avg/(len(row))
   
 
   #Murmur hash
