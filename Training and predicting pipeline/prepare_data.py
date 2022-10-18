@@ -79,7 +79,7 @@ def apply_hashing(data, all = True, size=1, hashing=32, hash="fnv"):
 def train_test_split(df, labels, train_split=0.8): # labels is not needed
   # to find out split index for 80-20 split
   init_split = int(train_split * len(df))
-  print(f"initial 80% split index: {init_split}")
+  print(f"initial {int(train_split*100)}% split index: {init_split}")
   last_gene = df.iloc[init_split]["gene_id"]
   print(f"last gene in train set: {last_gene}\n")
 
@@ -144,9 +144,9 @@ def get_PWM(seq, log_odds_dict):
         res = res + dic[base]
     return res
     
-def val_split(test, test_labels, val_split):
+def val_split(test, test_labels, val_split=0.5):
     init_split = int(val_split * len(test))
-    print(f"initial {val_split*100}% split index: {init_split}")
+    print(f"initial {int(val_split*100)}% split index: {init_split}")
     last_gene = test.iloc[init_split]["gene_id"]
     print(f"last gene in train set: {last_gene}\n")
 
