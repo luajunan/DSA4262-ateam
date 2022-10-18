@@ -66,7 +66,7 @@ def predict(json_input_path, *args):
     
     # load pre-trained model
     print("Data processed successfully. Loading pre-trained model...")
-    clf_xgb = xgb.Booster()
+    clf_xgb = xgb.XGBClassifier()
     clf_xgb.load_model("models/trained_model.bin")
     print("Pre-trained model loaded successfully.")
     
