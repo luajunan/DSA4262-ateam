@@ -16,3 +16,10 @@ It also creates 3 directories:
 `$ python model_prediction.py <json_input_path>`
 
 This reads a `.json` file and outputs the prediction to `./outputs/outputX.csv`
+
+
+## To test our pipeline, you may use our `small_testset` which will run faster than the full dataset, but poorer performance is to be expected.  
+
+`$ python model_training.py small_testset/data_train.json small_testset/info_train.info`
+
+`$ python model_prediction.py small_testset/data_test.json`
