@@ -49,7 +49,7 @@ def train_model():
     rfecv = RFECV(estimator=clf_xgb, cv=5, scoring='roc_auc', n_jobs=-1, verbose=10, step=1, min_features_to_select= min_features_to_select)
     rfecv.fit(X_train, y_train)
     
-    X_new = rfecv.transform(X_train)
+    X_train = rfecv.transform(X_train)
     
     # start hyperparameters tuning with gridsearch
     print("Performing GridSearchCV for finetuning hyperparameters...")
@@ -76,7 +76,7 @@ def train_model():
     predictive_features = list(X_train.columns)
     
     # prepares X_val
-    X_val = X_val.iloc[:, rfecv.support_]
+    X_val = X_val[predictive_features]
     
     ## fit the gscv best model with train data
     print("Fitting finetuned model with train data...")
@@ -84,7 +84,7 @@ def train_model():
     clf_xgb.fit(X_train, y_train, eval_set=[(X_val, y_val)], eval_metric = "aucpr", verbose=False, early_stopping_rounds=20)
     
     # prepares X_test
-    X_test = X_test.iloc[:, rfecv.support_]
+    X_test = X_test[predictive_features]
     
 
     y_pred = clf_xgb.predict(X_test)
