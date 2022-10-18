@@ -140,7 +140,7 @@ def train_model():
     outdir = './models'
     if not os.path.exists(outdir):
         os.mkdir(outdir)
-    path = os.path.join(outdir, "trained_model.json")
+    path = os.path.join(outdir, "trained_model.bin")
     
     print(f"Saving model to {path}...")
     clf_xgb.save_model(path)
