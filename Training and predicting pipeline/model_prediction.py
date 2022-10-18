@@ -4,6 +4,9 @@ import xgboost as xgb
 
 from model_training import *
 
+# Disable warning
+pd.options.mode.chained_assignment = None  # default='warn'
+
 def predict(json_input_path, *args):
     '''
     Input:
