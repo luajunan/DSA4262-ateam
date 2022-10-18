@@ -67,8 +67,35 @@ def train_model():
             "subsample": [0.8, 1],
             "n_estimators":[300, 500, 700],
             }
+            
+    best_params = {
+    "learning_rate" : [0.03],
+    "max_depth" : [7],
+    "min_child_weight" : [3],
+    "gamma" : [0.5],
+    "alpha" : [0],
+    "subsample" : [0.8],
+    "n_estimators" : [500],
+    }
+    
+    # fine-tuned model:
+    # XGBClassifier(alpha=0, base_score=0.5, booster='gbtree', colsample_bylevel=0.8,
+              # colsample_bynode=0.8, colsample_bytree=0.8, eval_metric='logloss',
+              # gamma=0.5, gpu_id=-1, importance_type='gain',
+              # interaction_constraints='', learning_rate=0.03, max_delta_step=0,
+              # max_depth=7, min_child_weight=3, missing=nan,
+              # monotone_constraints='()', n_estimators=500, n_jobs=8,
+              # num_parallel_tree=1, random_state=4262, reg_alpha=0, reg_lambda=1,
+              # scale_pos_weight=4.526171050384845, subsample=0.8,
+              # tree_method='exact', use_label_encoder=False,
+              # validate_parameters=1, verbosity=None)
+            
+    ## RSCV
+    # rscv_model = RandomizedSearchCV(clf, param_distributions=params, n_iter=10, scoring='average_precision', n_jobs=-1, cv=5, verbose=10)
+
     ## creates the gscv model
-    gscv_model = GridSearchCV(clf, param_grid = params, verbose =10, cv=5, scoring = 'average_precision', n_jobs=-1)
+    # gscv_model = GridSearchCV(clf, param_grid = params, verbose =10, cv=5, scoring = 'average_precision', n_jobs=-1)
+    gscv_model = GridSearchCV(clf, param_grid = best_params, verbose =10, cv=5, scoring = 'average_precision', n_jobs=-1)
     
     ## runs the gscv model
     gscv_model.fit(X_train, y_train)
