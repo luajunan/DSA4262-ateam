@@ -49,7 +49,7 @@ def train_model():
     rfecv = RFECV(estimator=clf_xgb, cv=5, scoring='roc_auc', n_jobs=-1, verbose=10, step=1, min_features_to_select= min_features_to_select)
     rfecv.fit(X_train, y_train)
     
-    X_train = rfecv.transform(X_train)
+    X_train = X_train.iloc[:, rfecv.support_] #rfecv.transform(X_train)
     
     # start hyperparameters tuning with gridsearch
     print("Performing GridSearchCV for finetuning hyperparameters...")
@@ -131,7 +131,7 @@ def train_model():
     path = os.path.join(outdir, "trained_model.json")
     
     print(f"Saving model to {path}...")
-    model_xgb.save_model(path)
+    clf_xgb.save_model(path)
     
     
     # save rfe features for future predicting
