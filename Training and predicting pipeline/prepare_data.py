@@ -228,7 +228,7 @@ def prepare_data(json_input_path, info_input_path):
     
     # getting the right train split
     print("Doing train test split (80-20)...")
-    train_split = train_test_split(new_df, labels, 0.65)
+    train_split = train_test_split(new_df, labels, 0.8)
     
     # PWM
     print("PWM...")
