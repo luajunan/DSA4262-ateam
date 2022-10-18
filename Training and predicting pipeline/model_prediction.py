@@ -2,9 +2,9 @@ import numpy as np
 import pandas as pd
 import xgboost as xgb
 
-from prepare_data import *
+from model_training import *
 
-def predict(json_input_path):
+def predict(json_input_path, *args):
     '''
     Input:
         json_input_path: Path to `data.json`
@@ -101,11 +101,40 @@ def predict(json_input_path):
     output.to_csv(path_or_buf=path, index=False)
     
     
+    ### if labels are given in *args
+    if args:
+        info = pd.read_csv(args[0])
+        info = info.astype({'transcript_position': 'int64'})
+        output = output.astype({'transcript_position': 'int64'})
+        
+        
+        # add the labels to output
+        new_df = pd.merge(output, info, left_on=['transcript_id','transcript_position'],right_on=['transcript_id','transcript_position'], how = 'left')
+        
+        # calculate the AUC-PR
+        y_pred_proba = new_df["score"]
+        y_test = new_df["label"]
+        y_pred = [int(i) for i in y_pred_proba]
+        
+        auc_score = roc_auc_score(y_test, y_pred_proba)
+        ap = average_precision_score(y_test, y_pred_proba)
+
+        print("Performance of model predictions:")
+        print("Accuracy:", accuracy_score(y_test, y_pred))
+        print("AUC-ROC:", auc_score)
+        print("PR-ROC:", ap)
+    
 
 if __name__ == "__main__":
-
-    predict(sys.argv[1])
     
+    if len(sys.argv) == 2:
+        predict(sys.argv[1])
+    elif len(sys.argv) == 3:
+        predict(sys.argv[1], sys.argv[2])
+    else:
+        raise Exception("Incorrect format or incorrect number of inputs.")
     print("Prediction complete.")
     ## run on terminal:
     ## $ python model_prediction.py <json_input_path>
+    ## or if true labels is available,
+    ## $ python model_prediction.py <json_input_path> <info_input_path>
