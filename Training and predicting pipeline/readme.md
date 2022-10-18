@@ -23,3 +23,9 @@ This reads a `.json` file and outputs the prediction to `./outputs/outputX.csv`
 `$ python model_training.py small_testset/data_train.json small_testset/info_train.info`
 
 `$ python model_prediction.py small_testset/data_test.json`
+
+## Or use our finetuned model straightaway for prediction, without training:
+
+`$ python model_prediction.py <json_input_path> <optional: info_input_path>`
+
+If labels are provided in the form of `data.info`, metrics will be printed out.
