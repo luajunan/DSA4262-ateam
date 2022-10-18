@@ -4,7 +4,7 @@
 
 `$ python model_training.py <json_input_path> <info_input_path>`
 
-This reads a `.json` and a `.info` file to train a model.  
+This reads the `<json_input_path>` and `<info_input_path>` file to train a model.  
 
 It also creates 3 directories:  
 - `./processed_data` which contains the training, testing and validation sets,  
@@ -15,9 +15,9 @@ It also creates 3 directories:
 
 `$ python model_prediction.py <json_input_path> <optional: info_input_path>`
 
-This reads the `.json` file and outputs the prediction to `./outputs/outputX.csv`  
+This reads the `<json_input_path>` file and outputs the prediction to `./outputs/outputX.csv`  
 
-If labels are provided in the form of `data.info`, metrics will be printed out.  
+If true labels are provided in `<optional: info_input_path>`, metrics will be printed out.  
 
 Our finetuned model already exists in `./models`, so you may run this without training a model yourself.
 
