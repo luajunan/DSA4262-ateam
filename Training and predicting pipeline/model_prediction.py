@@ -114,7 +114,7 @@ def predict(json_input_path, *args):
         # calculate the AUC-PR
         y_pred_proba = new_df["score"]
         y_test = new_df["label"]
-        y_pred = [int(i) for i in y_pred_proba]
+        y_pred = [round(i, 0) for i in y_pred_proba]
         
         auc_score = roc_auc_score(y_test, y_pred_proba)
         ap = average_precision_score(y_test, y_pred_proba)
