@@ -276,7 +276,7 @@ def prepare_data(json_input_path, info_input_path):
     
     # saving to csv
     print("Saving csv files...")
-    outdir = f'./processed_data`'
+    outdir = f'./processed_data'
     if not os.path.exists(outdir):
         os.mkdir(outdir) 
     
