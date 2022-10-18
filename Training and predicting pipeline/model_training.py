@@ -67,11 +67,12 @@ def train_model():
             "subsample": [0.8, 1],
             "n_estimators":[300, 500, 700],
             }
-            
+    
     best_params = {
-    "learning_rate" : [0.03],
+    "learning_rate" : [0.05],
     "max_depth" : [7],
     "min_child_weight" : [3],
+    "scale_pos_weight" : [3],
     "gamma" : [0.5],
     "alpha" : [0],
     "subsample" : [0.8],
