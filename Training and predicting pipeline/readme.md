@@ -34,6 +34,9 @@ To deactivate:
 2. Clone the required repository into your console.
 
 `$ git clone https://github.com/luajunan/DSA4262-ateam.git`
+- Note that the terminal might prompt you to login to your github account.
+- If entering the correct password throws an error, you are required to create a `Personal Access Token (PAT)`.
+- You can visit https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token for more information on how to create one.
 
 
 ## 3. Train a model with your data
