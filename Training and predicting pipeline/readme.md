@@ -1,25 +1,25 @@
 # How to use this Pipeline for Model Training and Predicting
 
-## Creating a Virtual Environment
+## 1. Creating a Virtual Environment
 
-### Upgrading Pip
+### a. Upgrading Pip
 `$ python3 -m pip install --user --upgrade pip`
 
 Ensure that `pip` is the latest version.
 
-### Installing Virtualenv
+### b. Installing Virtualenv
 
 `$ python3 -m pip install --user virtualenv`
 
 Install `virtualenv` in local console.
 
-### Creating Virtual Environment
+### c. Creating Virtual Environment
 
 `$ python3 -m venv env_name`
 
 Here, you can change `env_name` to your preferred name. For demonstration purposes, we will use `env_name` in this case.
 
-### Activate/Deactivate Virtual Environment
+### d. Activate/Deactivate Virtual Environment
 
 To activate:
 `$ source env_name/bin/activate`
@@ -27,8 +27,16 @@ To activate:
 To deactivate:
 `$ deactivate`
 
+## 4. Setting up virtual environment
 
-## Train a model with your data
+1. `cd` into the directory that you want to work in.
+
+2. Clone the required repository into your console.
+
+`$ git clone https://github.com/luajunan/DSA4262-ateam.git`
+
+
+## 3. Train a model with your data
 
 `$ python model_training.py <json_input_path> <info_input_path>`
 
@@ -39,7 +47,7 @@ It also creates 3 directories:
 - `./training_features` which contains necessary information for prediction later, and  
 - `./models` which contain the trained model file for prediction.
 
-## Predict test data with your pre-trained model
+## 3. Predict test data with your pre-trained model
 
 `$ python model_prediction.py <json_input_path> <optional: info_input_path>`
 
@@ -49,7 +57,7 @@ If true labels are provided in `<optional: info_input_path>`, metrics will be pr
 
 Our finetuned model already exists in `./models`, so you may run this without training a model yourself.
 
-## To test our pipeline, you may use our `small_testset` which will run faster than the full dataset, but poorer performance is to be expected.  
+## 4. To test our pipeline, you may use our `small_testset` which will run faster than the full dataset, but poorer performance is to be expected.  
 
 `$ python model_training.py small_testset/data_train.json small_testset/info_train.info`
 
