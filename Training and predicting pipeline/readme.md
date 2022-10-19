@@ -22,9 +22,11 @@ Here, you can change `env_name` to your preferred name. For demonstration purpos
 ### d. Activate/Deactivate Virtual Environment
 
 To activate:
+
 `$ source env_name/bin/activate`
 
 To deactivate:
+
 `$ deactivate`
 
 ## 4. Setting up virtual environment
@@ -38,8 +40,18 @@ To deactivate:
 - If entering the correct password throws an error, you are required to create a `Personal Access Token (PAT)`.
 - You can visit https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token for more information on how to create one.
 
+3. If cloning is successful, the `DSA4262-ateam` folder should be generated in your directory. You may use `$ ls` to confirm that the folder is present.
+
+4. `$ cd DSA4262-ateam/` to enter the folder's directory.
+
+5. Download the necessary packages listed in `requirements.txt`
+
+`$ python3 -m pip install -r requirements.txt`
+
 
 ## 3. Train a model with your data
+
+`$ cd Training\ and\ predicting\ pipeline/` to enter the working directory.
 
 `$ python model_training.py <json_input_path> <info_input_path>`
 
