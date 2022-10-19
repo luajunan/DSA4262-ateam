@@ -53,10 +53,10 @@ def train_model():
     
     # start hyperparameters tuning with gridsearch
     print("Performing GridSearchCV for finetuning hyperparameters...")
-    scale_pos_weight = math.sqrt(y_train.value_counts()[0]/y_train.value_counts()[1])
+    # scale_pos_weight = math.sqrt(y_train.value_counts()[0]/y_train.value_counts()[1])
 
-    clf = xgb.XGBClassifier(random_state=4262, colsample_bytree = 0.8, colsample_bynode = 0.8, colsample_bylevel = 0.8, use_label_encoder = False,
-                            eval_metric = "logloss", objective = "binary:logistic", scale_pos_weight = scale_pos_weight, n_estimators = 200)
+    clf = xgb.XGBClassifier(random_state=4262, colsample_bytree = 0.8, colsample_bynode = 0.8, colsample_bylevel = 0.8, use_label_encoder = False
+                            , objective = "binary:logistic", n_estimators = 200)
 
     params = {
             "learning_rate" : [0.03, 0.05, 0.08],
