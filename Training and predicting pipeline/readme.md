@@ -44,14 +44,13 @@ To deactivate:
 
 4. `$ cd DSA4262-ateam/` to enter the folder's directory.
 
-5. Download the necessary packages listed in `requirements.txt`
-
+5. Download the necessary packages listed in `requirements.txt`:
 `$ python3 -m pip install -r requirements.txt`
 
+6. Enter the working directory to start training!
+`$ cd Training\ and\ predicting\ pipeline/`
 
 ## 3. Train a model with your data
-
-`$ cd Training\ and\ predicting\ pipeline/` to enter the working directory.
 
 `$ python model_training.py <json_input_path> <info_input_path>`
 
