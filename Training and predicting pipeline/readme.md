@@ -1,5 +1,33 @@
 # How to use this Pipeline for Model Training and Predicting
 
+## Creating a Virtual Environment
+
+### Upgrading Pip
+`$ python3 -m pip install --user --upgrade pip`
+
+Ensure that `pip` is the latest version.
+
+### Installing Virtualenv
+
+`$ python3 -m pip install --user virtualenv`
+
+Install `virtualenv` in local console.
+
+### Creating Virtual Environment
+
+`$ python3 -m venv env_name`
+
+Here, you can change `env_name` to your preferred name. For demonstration purposes, we will use `env_name` in this case.
+
+### Activate/Deactivate Virtual Environment
+
+To activate:
+`$ source env_name/bin/activate`
+
+To deactivate:
+`$ deactivate`
+
+
 ## Train a model with your data
 
 `$ python model_training.py <json_input_path> <info_input_path>`
