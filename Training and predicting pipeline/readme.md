@@ -5,27 +5,27 @@
 ### a. Upgrading Pip
 `$ python3 -m pip install --user --upgrade pip`
 
-Ensure that `pip` is the latest version.
+- Ensure that `pip` is the latest version.
 
 ### b. Installing Virtualenv
 
 `$ python3 -m pip install --user virtualenv`
 
-Install `virtualenv` in local console.
+- Install `virtualenv` in local console.
 
 ### c. Creating Virtual Environment
 
 `$ python3 -m venv env_name`
 
-Here, you can change `env_name` to your preferred name. For demonstration purposes, we will use `env_name` in this case.
+- Here, you can change `env_name` to your preferred name. For demonstration purposes, we will use `env_name` in this case.
 
 ### d. Activate/Deactivate Virtual Environment
 
-To activate:
+- To activate:
 
 `$ source env_name/bin/activate`
 
-To deactivate:
+- To deactivate:
 
 `$ deactivate`
 
@@ -67,11 +67,11 @@ It also creates 3 directories:
 
 `$ python model_prediction.py <json_input_path> <optional: info_input_path>`
 
-This reads the `<json_input_path>` file and outputs the prediction to `./outputs/outputX.csv`  
+- This reads the `<json_input_path>` file and outputs the prediction to `./outputs/outputX.csv`  
 
-If true labels are provided in `<optional: info_input_path>`, metrics will be printed out.  
+- If true labels are provided in `<optional: info_input_path>`, metrics will be printed out.  
 
-Our finetuned model already exists in `./models`, so you may run this without training a model yourself.
+- Our finetuned model already exists in `./models`, so you may run this without training a model yourself.
 
 ## 5. To test our pipeline, you may use our `small_testset` which will run faster than the full dataset, but poorer performance is to be expected.  
 
