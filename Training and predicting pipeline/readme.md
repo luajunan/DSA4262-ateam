@@ -29,7 +29,7 @@ To deactivate:
 
 `$ deactivate`
 
-## 4. Setting up virtual environment
+## 2. Setting up virtual environment
 
 1. `cd` into the directory that you want to work in.
 
@@ -63,7 +63,7 @@ It also creates 3 directories:
 - `./training_features` which contains necessary information for prediction later, and  
 - `./models` which contain the trained model file for prediction.
 
-## 3. Predict test data with your pre-trained model
+## 4. Predict test data with your pre-trained model
 
 `$ python model_prediction.py <json_input_path> <optional: info_input_path>`
 
@@ -73,7 +73,7 @@ If true labels are provided in `<optional: info_input_path>`, metrics will be pr
 
 Our finetuned model already exists in `./models`, so you may run this without training a model yourself.
 
-## 4. To test our pipeline, you may use our `small_testset` which will run faster than the full dataset, but poorer performance is to be expected.  
+## 5. To test our pipeline, you may use our `small_testset` which will run faster than the full dataset, but poorer performance is to be expected.  
 
 `$ python model_training.py small_testset/data_train.json small_testset/info_train.info`
 
