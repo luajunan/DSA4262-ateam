@@ -1,4 +1,4 @@
-# How to use this Pipeline for Model Training and Predicting
+# How to use this Pipeline for Model Training and Predicting (In Terminal/Linux Environment)
 
 ## 1. Creating a Virtual Environment
 
