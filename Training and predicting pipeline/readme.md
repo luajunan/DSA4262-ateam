@@ -57,15 +57,18 @@
 `$ python model_training.py <json_input_path> <info_input_path>`
 
 This reads the `<json_input_path>` and `<info_input_path>` file to train a model.  
+Note: Ensure that the `.json` and `.info` files are already in this directory.
 
 It also creates 3 directories:  
 - `./processed_data` which contains the training, testing and validation sets,  
 - `./training_features` which contains necessary information for prediction later, and  
 - `./models` which contain the trained model file for prediction.
 
-## 4. Predict test data with your pre-trained model
+## 4. Predict test data with your pre-trained model (LGBM / XGB)
 
-`$ python model_prediction.py <json_input_path> <optional: info_input_path>`
+For demo purposes, we will use `model_prediction_lgb.py`. You may switch to `model_prediction_xgb.py` if you are interested in using the XGB to predict.
+
+`$ python model_prediction_lgb.py <json_input_path> <optional: info_input_path>`
 
 - This reads the `<json_input_path>` file and outputs the prediction to `./outputs/outputX.csv`  
 
