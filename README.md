@@ -69,3 +69,10 @@ In our case, XGBoost recursively selected `22` importance features and LightGBM 
 ## 5. Demo
 
 Click [here](https://github.com/luajunan/DSA4262-ateam/tree/main/Training%20and%20predicting%20pipeline) to train/predict using the pipeline we created!
+
+## 6. Contributers:
+1. [Koi Sze Ming](https://github.com/szeming23)
+2. [Choo Chun Kheng](https://github.com/ChooChunKheng)
+3. [Raymond Chin](https://github.com/PeachDew)
+4. [Lua Jun An](https://github.com/luajunan)
+5. [Neaton Ang](https://github.com/neatonang)
