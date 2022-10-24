@@ -67,7 +67,7 @@ It also creates 3 directories:
 
 ## 4. Predict test data with your pre-trained model (LGBM / XGB)
 
-For demo purposes, we will use `model_prediction_lgb.py`. You may switch to `model_prediction_xgb.py` if you are interested in using the XGB to predict.
+For demo purposes, we will use `model_prediction_lgb.py`. You may switch to `model_prediction_xgb.py` if you are interested in using XGB to predict.
 
 `$ python model_prediction_lgb.py <json_input_path> <optional: info_input_path>`
 
