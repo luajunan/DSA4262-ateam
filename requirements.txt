@@ -1,5 +1,6 @@
 bz2file==0.98
 joblib==1.2.0
+lightgbm==3.3.1
 mmh3==3.0.0
 numpy==1.23.4
 pandas==1.5.1
