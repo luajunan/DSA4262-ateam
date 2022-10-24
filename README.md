@@ -28,7 +28,7 @@ The data.json file is then converted into a dataframe with the following columns
 | transcript_id | transcript_pos | nucleotide_seq | dwell_time_-1 | sd_-1 | mean_-1 | dwell_time_0 | sd_0 | mean_0 | dwell_time_1 | sd_1 | mean_1
 |-|-|-|-|-|-|-|-|-|-|-|-|
 
-## 2. Data train-test split
+## 2. Train-test split
 
 As positions within the same genes might be strongly correlated to each other, there should be no overlapping genes in the train and test split to prevent data leakage.
 
