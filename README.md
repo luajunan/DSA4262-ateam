@@ -8,14 +8,14 @@ Given direct RNA-Seq data and the m6A modification labels, we are to train a mod
 
 ### 1. Data Parsing
 
-In the data.json file, we are given information on transcript ID, transcript position, nucleotide sequence and a nested list of numbers which represents features extracted from each read at the transcript position as well as the 1-neighbouring position, i.e. 3 features for position 243, followed by 3 features for positions 244 and 245 respectively.
+In the data.json file, we are given information on transcript ID, transcript position, nucleotide sequence and a nested list of numbers which represents features extracted from each read at the transcript position as well as the 1-neighbouring position, i.e. `3` features for position `243`, followed by `3` features for positions `244` and `245` respectively.
 
 **Illustration of Input File:**
 <p align="center">
   <img width=75% src="images/reads.png">
 </p>
 
-For each *(transcript_id, transcript_pos, nucleotide_seq)* triplet, there are a variable number of reads for the 9 features. We decided to take the column means of all reads of these 9 features for each triplet, reducing the total number of rows in the final dataframe, and decreasing the impact of any outlying reads.
+For each *(transcript_id, transcript_pos, nucleotide_seq)* triplet, there are a variable number of reads for the `9` features. We decided to take the column means of all reads of these `9` features for each triplet, reducing the total number of rows in the final dataframe, and decreasing the impact of any outlying reads.
 
 **Illustration of Taking Means:**
 
@@ -33,7 +33,7 @@ The data.json file is then converted into a dataframe with the following columns
 As positions within the same genes might be strongly correlated to each other, there should be no overlapping genes in the train and test split to prevent data leakage.
 
 First, the dataframe is sorted by *gene_id.*
-Next, we chose our train size to be 80% of the full dataset. Hence, the initial split index is calculated with `$0.8 * len(dataframe).`
+Next, we chose our train size to be `80%` of the full dataset. Hence, the initial split index is calculated with `0.8 * len(dataframe)`.
 Lastly, by inspecting the dataframe from the initial split index onwards, the actual split index is chosen where the gene_id is different from the previous index’s *gene_id.*
 
 **Illustration of Train-Test Split:**
@@ -54,6 +54,8 @@ After doing some research, we tried out several methods likes:
 ### 3. Feeature Selection
 
 After feature engineering, our training dataset had `46` feature columns and we decided to apply the **Recursive Feature Elimination (RFE)** method to reduce the dimension of our training data (to prevent overfitting).
+
+In our case, XGBoost recursively selected `22` importance features and LightGBM recursively selected `30` features.
 
 ### 4. Model Evaluation
 
