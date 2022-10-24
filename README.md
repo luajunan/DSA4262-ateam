@@ -51,7 +51,7 @@ After doing some research, we tried out several methods likes:
 3. Position Weight Matrix
 4. "GGACT" Sequence Present
 
-### 3. Feeature Selection
+### 3. Feature Selection
 
 After feature engineering, our training dataset had `46` feature columns and we decided to apply the **Recursive Feature Elimination (RFE)** method to reduce the dimension of our training data (to prevent overfitting).
 
