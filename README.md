@@ -45,7 +45,7 @@ Lastly, by inspecting the dataframe from the initial split index onwards, the ac
 ### 2. Feature Engineering
 We were also given an additional column known as the “nucleo_seq” which describes the 7-mer nucleotide sequence. Since the sequence cannot be passed as an input into a machine learning model, some feature engineering has to be done.
 
-After doing some research, we tried out several methods likes:
+After doing some research, we tried out several methods like:
 1. Hashing (Fowler-Noll-Vo and MurmurHash)
 2. One-hot Encoding
 3. Position Weight Matrix
