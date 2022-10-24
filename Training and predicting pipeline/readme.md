@@ -52,12 +52,13 @@
 
 `$ cd Training\ and\ predicting\ pipeline/`
 
-## 3. Train a model with your data
+## 3. Train a model with your data (To perform prediction with our pre-trained model, you may skip this step)
 
 `$ python model_training.py <json_input_path> <info_input_path>`
 
-This reads the `<json_input_path>` and `<info_input_path>` file to train a model.  
-Note: Ensure that the `.json` and `.info` files are already in this directory.
+This reads the `<json_input_path>` and `<info_input_path>` file to train a model.
+
+**Note**: Ensure that the `.json` and `.info` files are already in this directory.
 
 It also creates 3 directories:  
 - `./processed_data` which contains the training, testing and validation sets,  
@@ -76,7 +77,7 @@ For demo purposes, we will use `model_prediction_lgb.py`. You may switch to `mod
 
 - Our finetuned model already exists in `./models`, so you may run this without training a model yourself.
 
-## 5. To test our pipeline, you may use our `small_testset` which will run faster than the full dataset, but poorer performance is to be expected.  
+## 5. To test our pipeline, you may use our `small_testset` which will run faster than the full dataset, but poorer performance may be expected.  
 
 `$ python model_training_lgb.py small_testset/data_train.json small_testset/info_train.info`
 
