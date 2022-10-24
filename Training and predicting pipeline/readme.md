@@ -78,6 +78,6 @@ For demo purposes, we will use `model_prediction_lgb.py`. You may switch to `mod
 
 ## 5. To test our pipeline, you may use our `small_testset` which will run faster than the full dataset, but poorer performance is to be expected.  
 
-`$ python model_training.py small_testset/data_train.json small_testset/info_train.info`
+`$ python model_training_lgb.py small_testset/data_train.json small_testset/info_train.info`
 
-`$ python model_prediction.py small_testset/data_test.json`
+`$ python model_prediction_lgb.py small_testset/data_test.json`
