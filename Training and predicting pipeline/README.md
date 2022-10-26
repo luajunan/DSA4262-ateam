@@ -54,7 +54,8 @@
 
 ## 3. Train a model with your data (To perform prediction with our pre-trained model, you may skip this step)
 
-`$ python model_training_lgb.py <json_input_path> <info_input_path>` or `$ python model_training_xgb.py <json_input_path> <info_input_path>`
+`$ python model_training_lgb.py <json_input_path> <info_input_path>` or 
+`$ python model_training_xgb.py <json_input_path> <info_input_path>`
 
 This reads the `<json_input_path>` and `<info_input_path>` file to train a model.
 
