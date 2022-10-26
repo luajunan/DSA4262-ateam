@@ -28,7 +28,7 @@ The data.json file is then converted into a dataframe with the following columns
 | transcript_id | transcript_pos | nucleotide_seq | dwell_time_-1 | sd_-1 | mean_-1 | dwell_time_0 | sd_0 | mean_0 | dwell_time_1 | sd_1 | mean_1
 |-|-|-|-|-|-|-|-|-|-|-|-|
 
-## 2. Train-test split
+### 2. Train-test split
 
 As positions within the same genes might be strongly correlated to each other, there should be no overlapping genes in the train and test split to prevent data leakage.
 
@@ -42,7 +42,7 @@ Lastly, by inspecting the dataframe from the initial split index onwards, the ac
   <img width=75% src="images/train_test.png">
 </p>
 
-### 2. Feature Engineering
+### 3. Feature Engineering
 We were also given an additional column known as the “nucleo_seq” which describes the 7-mer nucleotide sequence. Since the sequence cannot be passed as an input into a machine learning model, some feature engineering has to be done.
 
 After doing some research, we tried out several methods like:
@@ -51,13 +51,13 @@ After doing some research, we tried out several methods like:
 3. Position Weight Matrix
 4. "GGACT" Sequence Present
 
-### 3. Feature Selection
+### 4. Feature Selection
 
 After feature engineering, our training dataset had `46` feature columns and we decided to apply the **Recursive Feature Elimination (RFE)** method to reduce the dimension of our training data (to prevent overfitting).
 
 In our case, XGBoost recursively selected `22` importance features and LightGBM recursively selected `30` features.
 
-### 4. Model Evaluation
+### 5. Model Evaluation
 
 | **Models** | **Accuracy** | **ROC-AUC** | **PR-AUC** |
 | ------------- | ------------- | ------------- | ------------- |
@@ -66,11 +66,11 @@ In our case, XGBoost recursively selected `22` importance features and LightGBM 
 | XGBoost w/ 22 Selected Features | 96.10% | 88.70%  | 42.78% |
 | LightGBM w/ 30 selected Features | 96.61% | 88.66% | 43.44% |
 
-## 5. Demo
+### 6. Demo
 
 Click [here](https://github.com/luajunan/DSA4262-ateam/tree/main/Training%20and%20predicting%20pipeline) to train/predict using the pipeline we created!
 
-## 6. Contributers:
+### 7. Contributers:
 1. [Koi Sze Ming](https://github.com/szeming23)
 2. [Choo Chun Kheng](https://github.com/ChooChunKheng)
 3. [Raymond Chin](https://github.com/PeachDew)
