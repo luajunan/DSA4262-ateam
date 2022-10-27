@@ -44,7 +44,7 @@ We applied the same methodology to achieve our validation split as well.
   <img width=75% src="images/train_test.png">
 </p>
 
-Final Split:
+**Final Split:**
 | **Data** | **Split** | **Rows** |
 | ------------- | ------------- | ------------- |
 | Training | 80.01% | 97,483 |
