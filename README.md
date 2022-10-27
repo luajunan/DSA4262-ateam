@@ -38,6 +38,12 @@ Lastly, by inspecting the dataframe from the initial split index onwards, the ac
 
 We applied the same methodology to achieve our validation split as well.
 
+**Illustration of Train-Test Split:**
+
+<p align="center">
+  <img width=75% src="images/train_test.png">
+</p>
+
 Final Split:
 | **Data** | **Split** | **Rows** |
 | ------------- | ------------- | ------------- |
@@ -45,12 +51,6 @@ Final Split:
 | Test | 10.01% | 12,196 |
 | Validation | 9.98% | 12,159  | 42.78% |
 | Total | 100% | 121,838 |
-
-**Illustration of Train-Test Split:**
-
-<p align="center">
-  <img width=75% src="images/train_test.png">
-</p>
 
 ### 3. Feature Engineering
 We were also given an additional column known as the *nucleo_seq* which describes the 7-mer nucleotide sequence. Since the sequence cannot be passed as an input into a machine learning model, some feature engineering has to be done.
