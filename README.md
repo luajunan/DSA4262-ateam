@@ -41,9 +41,9 @@ We applied the same methodology to achieve our validation split as well.
 Final Split:
 | **Data** | **Split** | **Rows** |
 | ------------- | ------------- | ------------- |
-| Training | 80% | 97,483 |
-| Test | 10% | 12,196 |
-| Validation | 10% | 12,150  | 42.78% |
+| Training | 80.01% | 97,483 |
+| Test | 10.01% | 12,196 |
+| Validation | 9.98% | 12,159  | 42.78% |
 | Total | 100% | 121,838 |
 
 **Illustration of Train-Test Split:**
