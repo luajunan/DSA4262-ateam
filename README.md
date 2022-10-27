@@ -28,7 +28,7 @@ The data.json file is then converted into a dataframe with the following columns
 | transcript_id | transcript_pos | nucleotide_seq | dwell_time_-1 | sd_-1 | mean_-1 | dwell_time_0 | sd_0 | mean_0 | dwell_time_1 | sd_1 | mean_1
 |-|-|-|-|-|-|-|-|-|-|-|-|
 
-### 2. Train-Test-Val split
+### 2. Train-Test-Val Split (8:1:1)
 
 As positions within the same genes might be strongly correlated to each other, there should be no overlapping genes in the train and test split to prevent data leakage.
 
@@ -40,7 +40,7 @@ We applied the same methodology to achieve our validation split as well.
 
 Final Split:
 | **Data** | **Split** | **Rows** |
-| ------------- | ------------- |
+| ------------- | ------------- | ------------- |
 | Training | 80% | 97,483 |
 | Test | 10% | 12,196 |
 | Validation | 10% | 12,150  | 42.78% |
