@@ -17,7 +17,7 @@
 
 `$ python3 -m venv env_name`
 
-- Here, you can change `env_name` to your preferred name. For demonstration purposes, we will use `env_name` in this case.
+- Here, you can change `env_name` to your preferred name. For demonstration purposes, we will use `env_name`.
 
 ### d. Activate/Deactivate Virtual Environment
 
