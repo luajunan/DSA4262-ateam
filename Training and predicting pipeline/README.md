@@ -2,20 +2,20 @@
 
 ## 1. Creating a Virtual Environment
 
-### a. Upgrading Pip
-`$ python3 -m pip install --user --upgrade pip`
+### a. Installing Pip
+`$ sudo apt-get install python3-pip`
 
 - Ensure that `pip` is the latest version.
 
 ### b. Installing Virtualenv
 
-`$ python3 -m pip install --user virtualenv`
+`$ sudo pip3 install virtualenv`
 
 - Install `virtualenv` in local console.
 
 ### c. Creating Virtual Environment
 
-`$ python3 -m venv env_name`
+`$ virtualenv env_name`
 
 - Here, you can change `env_name` to your preferred name. For demonstration purposes, we will use `env_name`.
 
