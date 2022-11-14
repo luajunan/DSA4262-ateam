@@ -72,7 +72,7 @@ For demo purposes, we will use `model_prediction_lgb.py`. You may switch to `mod
 
 `$ python model_prediction_lgb.py <json_input_path> <optional: info_input_path>`
 
-- This reads the `<json_input_path>` file and outputs the prediction to `./outputs/outputX.csv`  
+- This reads the `<json_input_path>` file and outputs the prediction to `./prediction_outputs/outputX.csv`  
 
 - If true labels are provided in `<optional: info_input_path>`, metrics will be printed out.  
 
