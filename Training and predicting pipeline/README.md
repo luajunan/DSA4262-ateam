@@ -50,7 +50,7 @@
 
 6. Enter the working directory to start training!
 
-`$ cd Training\ and\ predicting\ pipeline/`
+`$ cd "Training and predicting pipeline/"`
 
 ## 3. Train a model with your data (To perform prediction with our pre-trained model, you may skip this step)
 
